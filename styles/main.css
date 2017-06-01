@@ -26,7 +26,7 @@ body.landing {
 .hero-content {
   position: relative;
   min-height: 600px;
-  background-image: url(../assets/images/bloc_jams.bg.jpg);
+  background-image: url(../assets/images/bloc_jams_bg.jpg);
   background-position: center center;
   background-size: cover;
 }
@@ -40,7 +40,7 @@ body.landing {
   transform:  translateY(-50%);
   width: 100%;
   text-align: center;
-  font-size: 4ream'
+  font-size: 4rem'
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 0.5rem:normal;
