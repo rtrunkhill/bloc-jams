@@ -33,6 +33,11 @@ body {
   max-width: 64rem;
 }
 
+
+.container.narrow {
+     max-width: 56rem;
+ }
+
 .navbar .links-container {
      display: table;
      position: absolute;
@@ -63,7 +68,7 @@ body {
  }
 
 .links-container .navbar-link:active {
-  background-color: white; 
+  background-color: white;
 }
    /* #5 */
  .links-container .navbar-link:hover {
