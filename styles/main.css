@@ -70,14 +70,14 @@ body {
   background-color: white;
 }
    /* #5 */
- .links-container .navbar-link:hover {
+.links-container .navbar-link:hover {
      color: rgb(233,50,117);
  }
 
 @media (min-width: 640px) {
   html { font-size: 112%; }
 
-  .column {
+.column {
     float: left;
     padding-left: 1rem;
     padding-right: 1rem;
