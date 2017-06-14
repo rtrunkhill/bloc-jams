@@ -29,6 +29,21 @@ var albumMarconi = {
         { title: 'Wrong phone number', duration: '2:15'}
     ]
 };
+// cp 11 asigment example
+var albumOtep = {
+    title: 'Generation Doom',
+    artist: 'Otep',
+    label: 'Napalm Records',
+    year: '2016',
+    albumArtUrl: 'assets/images/album_covers/14.png',
+    songs: [
+        { title: 'Zero', duration: '3:13' },
+        { title: 'Feeding Frenzy', duration: '3:56' },
+        { title: 'Lords of War', duration: '5:06' },
+        { title: 'Royals', duration: '3:27'},
+        { title: 'In Cold Blood', duration: '3:59'}
+    ]
+};
 var createSongRow = function(songNumber, songName, songLength) {
     var template =
        '<tr class="album-view-song-item">'
@@ -62,7 +77,18 @@ var setCurrentAlbum = function(album) {
         albumSongList.innerHTML += createSongRow(i + 1, album.songs[i].title, album.songs[i].duration);
     }
 };
+function albumClick () {
 
+  var albumArray = [albumPicasso, albumMarconi, albumOtep];
+    setCurrentAlbum(albumArray[i]);
+    i += 1;
+    if (i == albumArray.length) {
+      i = 0;
+    }
+}
+var i = 1;
 window.onload = function() {
     setCurrentAlbum(albumPicasso);
+
+    document.getElementsByClassName("album-cover-art")[0].addEventListener("click", albumClick);
 };
