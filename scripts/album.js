@@ -63,24 +63,28 @@ var setCurrentAlbum = function(album) {
     }
 };
 
+
 var findParentByClassName = function(element, targetClass) {
-    var targetParent = element.parentElement;
-    switch (targetParent) {
-        case targetParent.className === targetClass:
-            return targetParent;
-        case null:
+    if (element) {
+      // console.log('element', element);
+      // console.log('element.parentElement', element.parentElement);
+      // console.log('targetClass', targetClass);
+        var targetParent = element.parentElement;
+        if (targetParent === null){
             console.log("No parent found");
-            break;
-        case targetParent.className !== targetClass && targetParent.className !== null:
-            targetParent = element.parentElement;
-            return;
-        case targetParent.className !== targetClass:
-            console.log("No parent found with that class name");
-            break;
-        default:
-            return;
+        }
+        while (targetParent.className != targetClass && targetParent.className !== null) {
+            targetParent = targetParent.parentElement;
+            console.log('updated targetParent', targetParent);
+            if (targetParent.className === null) {
+                console.log("No parent found with that class name");
+            }
+        }
+        return targetParent;
     }
-}
+};
+
+
 
 // var findParentByClassName = function(element, targetClass) {
 //   if (element) {
@@ -141,7 +145,7 @@ window.onload = function() {
 
   songListContainer.addEventListener('mouseover', function(event) {
     // #1
-    console.log("here", event.target);
+    // console.log("here", event.target);
     if (event.target.parentElement.className === 'album-view-song-item') {
       // Change the content from the number to the play button's HTML
       var songItem = getSongItem(event.target);
