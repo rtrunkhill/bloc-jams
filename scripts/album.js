@@ -92,8 +92,13 @@ var nextSong = function() {
   currentSongFromAlbum = currentAlbum.songs[currentSongIndex];
 
   updatePlayerBarSong();
+
   var $nextSongNumberCell = $('.song-item-number[data-song-number="' + currentlyPlayingSongNumber + '"]');
+  console.log('next', $nextSongNumberCell);
   var $lastSongNumberCell = $('.song-item-number[data-song-number="' + lastSongNumber + '"]');
+  console.log('last', $lastSongNumberCell);
+  console.log('songs', $('.song-item-number'));
+
   $nextSongNumberCell.html(pauseButtonTemplate);
   $lastSongNumberCell.html(lastSongNumber);
 };
