@@ -167,14 +167,14 @@ var updatePlayerBarSong = function() {
 
 var togglePlayFromPlayerBar = function() {
 // If a song is paused and the play button is clicked in the player bar
-  if ($('.play-pause').html(playerBarPauseButton) && $('.play-pause').click()) {
+  if (currentSoundFile.isPaused() === true && $('.main-controls .play-pause').click()) {
     // Change the song number cell from a play button to a pause button
     $('.song-item-number').html(pauseButtonTemplate);
     // Change the HTML of the player bar's play button to a pause button
     $('.main-controls .play-pause').html(playerBarPauseButton);
     // Play the song
     currentSoundFile.pause();
-  } else if (('.play-pause').html(playerBarPlayButton) && $('.play-pause').click()) {
+  } else if (currentSoundFile.isPaused() === false && $('.main-controls .play-pause').click()) {
     // Change the song number cell from a pause button to a play button
     $('.song-item-number').html(playButtonTemplate);
     // Change the HTML of the player bar's pause button to a play button
