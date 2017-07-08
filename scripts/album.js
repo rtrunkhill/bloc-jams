@@ -166,22 +166,17 @@ var updatePlayerBarSong = function() {
 };
 
 var togglePlayFromPlayerBar = function() {
-// If a song is paused and the play button is clicked in the player bar
-  if (currentSoundFile.isPaused() === true && $('.main-controls .play-pause').click()) {
-    // Change the song number cell from a play button to a pause button
-    $('.song-item-number').html(pauseButtonTemplate);
-    // Change the HTML of the player bar's play button to a pause button
-    $('.main-controls .play-pause').html(playerBarPauseButton);
-    // Play the song
+  var songPlaying = getSongNumberCell(currentlyPlayingSongNumber);
+  if (currentSoundFile.isPaused() === false) {
+    songPlaying.html(playButtonTemplate);
+    $bigPlaynPause.html(playerBarPlayButton);
     currentSoundFile.pause();
-  } else if (currentSoundFile.isPaused() === false && $('.main-controls .play-pause').click()) {
-    // Change the song number cell from a pause button to a play button
-    $('.song-item-number').html(playButtonTemplate);
-    // Change the HTML of the player bar's pause button to a play button
-    $('.main-controls .play-pause').html(playerBarPlayButton);
-    // Pause the song
-    currentSoundFile.pause();
+  } else {
+    songPlaying.html(pauseButtonTemplate);
+    $bigPlaynPause.html(playerBarPauseButton);
+    currentSoundFile.play();
   }
+
 };
 
 var playButtonTemplate = '<a class="album-song-button"><span class="ion-play"></span></a>';
