@@ -235,17 +235,17 @@ var previousSong = function() {
   $previousSongNumberCell.html(pauseButtonTemplate);
   $lastSongNumberCell.html(lastSongNumber);
 };
-var togglePlayFromPlayerBar = function() {
-  var songPlaying = getSongNumberCell(currentlyPlayingSongNumber);
-  if (currentSoundFile.isPaused() === false) {
-    songPlaying.html(playButtonTemplate);
-    $bigPlaynPause.html(playerBarPlayButton);
-    currentSoundFile.pause();
-  } else {
-    songPlaying.html(pauseButtonTemplate);
-    $bigPlaynPause.html(playerBarPauseButton);
-    currentSoundFile.play();
-  };
+// var togglePlayFromPlayerBar = function() {
+//   var songPlaying = getSongNumberCell(currentlyPlayingSongNumber);
+//   if (currentSoundFile.isPaused() === false) {
+//     songPlaying.html(playButtonTemplate);
+//     $bigPlaynPause.html(playerBarPlayButton);
+//     currentSoundFile.pause();
+//   } else {
+//     songPlaying.html(pauseButtonTemplate);
+//     $bigPlaynPause.html(playerBarPauseButton);
+//     currentSoundFile.play();
+//   };
 
 //step 1A
  var setCurrentTimeInPlayerBar = function(currentTime) {
@@ -301,5 +301,5 @@ $(document).ready(function() {
   setupSeekBars();
   $previousButton.click(previousSong);
   $nextButton.click(nextSong);
-  $bigPlaynPause.click();
+  // $bigPlaynPause.click(togglePlayFromPlayerBar);
 });
